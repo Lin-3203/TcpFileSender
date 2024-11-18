@@ -12,12 +12,16 @@ class TcpFileSender : public QDialog
 public:
     TcpFileSender(QWidget *parent = 0);
     ~TcpFileSender();
+
 public slots:
     void start();
     void startTransfer();
     void updateClientProgress(qint64 numBytes);
     void openFile();
+
 private:
+    QLineEdit        *ipAddressInput;     // 用於輸入 IP 位址
+    QLineEdit        *portInput;          // 用於輸入 Port
     QProgressBar     *clientProgressBar;
     QLabel           *clientStatusLabel;
     QPushButton      *startButton;
